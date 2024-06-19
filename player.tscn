@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5cf8tewxn2x6"]
 
-[ext_resource type="Script" path="res://player_movement.cs" id="1_jl2c0"]
+[ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_nro4y"]
 [ext_resource type="Texture2D" uid="uid://dbrxopdv8ce12" path="res://Sprites/player/walk/Layer-1.png" id="1_ujrb0"]
 [ext_resource type="Texture2D" uid="uid://ci1kpi0153w2q" path="res://Sprites/player/walk/Layer-2.png" id="2_o1wbc"]
 [ext_resource type="Texture2D" uid="uid://cjbpwajelu0td" path="res://Sprites/player/walk/Layer-3.png" id="3_u51jy"]
@@ -38,8 +38,8 @@ animations = [{
 size = Vector2(11, 23)
 
 [node name="body" type="CharacterBody2D"]
-script = ExtResource("1_jl2c0")
-Speed = 200.0
+script = ExtResource("1_nro4y")
+moveSpeed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qwdku")
