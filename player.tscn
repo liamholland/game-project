@@ -38,8 +38,8 @@ animations = [{
 size = Vector2(11, 23)
 
 [node name="body" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_nro4y")
-moveSpeed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qwdku")

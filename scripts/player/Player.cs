@@ -1,22 +1,27 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody2D
 {
 	[Export] private float moveSpeed;
+	[Export] private float jumpVelocity;
 
-	private static IMovementController topDownMovementController;
+	public float MoveSpeed => moveSpeed;
+	public float JumpVelocity => jumpVelocity * -1f;	// * -1 to make the input in the editor more intuitive
+
+	private IMovementController controller;
 
     public override void _EnterTree()
     {
-		if(topDownMovementController == null){
-        	topDownMovementController = new PlayerTopDownMovementController(moveSpeed);
+		if(controller == null){
+			controller = PlayerController.builder()
+							.player(this)
+							.build();
 		}
     }
 
     public override void _PhysicsProcess(double delta)
 	{
-		Velocity = topDownMovementController.move();
+		Velocity = controller.move(delta);
 		MoveAndSlide();
 	}
 }
