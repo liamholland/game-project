@@ -9,13 +9,19 @@ public partial class Player : CharacterBody2D
 	public float JumpVelocity => jumpVelocity * -1f;	// * -1 to make the input in the editor more intuitive
 
 	private IMovementController controller;
+	
+
+	public static Player Instance => _instance;
+	private static Player _instance;
 
     public override void _EnterTree()
     {
+		if(_instance == null){
+			_instance = this;
+		}
+
 		if(controller == null){
-			controller = PlayerController.builder()
-							.player(this)
-							.build();
+			controller = new PlayerController();
 		}
     }
 
