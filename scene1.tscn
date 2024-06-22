@@ -6,10 +6,10 @@
 [node name="scene1" type="Node2D"]
 
 [node name="body" parent="." instance=ExtResource("2_s16cq")]
-position = Vector2(59, -55)
+position = Vector2(15, -37)
 motion_mode = 0
 moveSpeed = 150.0
-jumpVelocity = -400.0
+jumpVelocity = 400.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(59, -23)

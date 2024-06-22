@@ -5,7 +5,7 @@ public class PlayerController : IMovementController
     public Player Player => _player;
 
     private Player _player;
-    private bool isTopDownMode = false;
+    private bool isTopDownMode = false; //to be replaced by a mode controller
 
 	private static float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
